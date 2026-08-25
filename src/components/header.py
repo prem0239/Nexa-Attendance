@@ -9,7 +9,7 @@ def header_home():
     st.markdown(f""" 
         <div style = "display: flex; flex-direction:column; align-items:center; justify-content:center: margin-bottm:30px margin-top: 30px">
             <img src= '{logo_url}' style = 'height: 250px;' />
-            <h1 style =''text-align:center; color:#b51a2b >Nexa Attend <br> An &nbsp; AI - Attendence System</h1>
+            <h1 style ="text-align:center; color:#b51a2b ">Nexa Attend <br> An &nbsp; AI - Attendence System</h1>
         </div>
 
         """, unsafe_allow_html = True)
@@ -22,9 +22,9 @@ def header_dashboard():
     
 
     st.markdown(f""" 
-        <div style = "display: flex; align-items:center; justify-content:center: gap:10px margin-top: 30px">
+        <div style="display: flex; flex-direction: row; align-items:center; justify-content:center; gap:10px; width:100%;">
             <img src= '{logo_url}' style = 'height: 250px;' />
-            <h2 style =''text-align:center; color:#b51a2b >Nexa Attend <br> An &nbsp; AI - Attendence System</h1>
+            <h2 style ='text-align:center; color:#b51a2b '>/* */</h2>
         </div>
 
         """, unsafe_allow_html = True)
