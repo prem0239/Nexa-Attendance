@@ -6,6 +6,7 @@ from src.components.dialog_create_subject import create_subject_dialog
 from src.database.db import check_teacher_exists, create_teacher, teacher_login,get_teacher_subjects
 from src.components.dialog_create_subject import create_subject_dialog
 from src.components.subject_card import subject_card
+from src.components.dialog_share_subject import share_subject_dialog
 
 def teacher_screen():
 
@@ -100,11 +101,11 @@ def teacher_tab_manage_subjects():
                 name=sub['name'],
                 code=sub['subject_code'],
                 section=sub['section'],
-                stats=stats
+                stats=stats,
             )
 
             if st.button(f"Share Code: {sub['name']}", key=f"Share_{sub['subject_code']}", icon=":material/share:", width='stretch', type='primary'):
-                pass  # share_subject_dialog not implemented yet
+                share_subject_dialog(sub['name'], sub['subject_code'])
 
             st.space()
     else:
