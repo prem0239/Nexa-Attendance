@@ -14,7 +14,7 @@ def home_screen():
 
     with col1:
         st.header("I'm Student")
-        st.image('src\screens\Student_logo.png')
+        st.image('src\\screens\\Student_logo.png')
         if st.button('Student Portal',icon=':material/arrow_outward:'):
             st.session_state['login_type'] = 'student'
             st.rerun()
