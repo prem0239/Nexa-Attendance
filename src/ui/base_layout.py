@@ -19,7 +19,17 @@ def style_background_home():
     ,unsafe_allow_html=True)
 
 
+def style_dialog():
+    st.markdown("""
+            <style>
 
+                div[data-testid="stDialog"] div[role="dialog"]{
+                    background-color: #CC5500 !important;
+                }
+
+            </style>
+            """
+    ,unsafe_allow_html=True)
 
 def style_background_dashboard():
     st.markdown("""
