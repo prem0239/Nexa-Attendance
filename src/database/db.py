@@ -53,33 +53,7 @@ def create_subject(subject_code, name, section, teacher_id):
 
     return response.data
 
-# THIS IS THE ERROR CODE IN THE MANAGE SUBJECTS
 
-    # def get_teacher_subjects(teacher_id):
-    #     response = supabase.table('subjects').select("*, subject_students(count), attendance_logs(timestamp)").eq("teacher_id", teacher_id).execute()
-
-    #     subject = response.data
-
-
-    #     for sub in subjects:
-    #         sub['total_students'] = sub.get("subjects_students", [{}])[0].get('count', 0) if sub.get('subject_students') else 0
-    #         attendance = sub.get('attendance_logs', [])
-    #         unique_sessions = len(set(log['timestamp'] for log in attendance))
-    #         sub['total_classes'] = unique_sessions
-
-    #         #attendace logs
-
-    #         #timestamp | studentid | subject_id
-    #         #9:32 5 1
-    #         #9:32 3 1
-    #         #9:32 6 1
-    #         #9:32 7 1
-
-            
-    #         sub.pop('subject_student', None)
-    #         sub.pop('attendance_logs', None)
-
-    #     return subjects
 
 
 def get_teacher_subjects(teacher_id):

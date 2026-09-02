@@ -3,6 +3,7 @@ import pandas as pd
 from src.pipelines.voice_pipeline  import precess_bulk_audio
 from src.database.config import supabase
 from datetime import datetime
+from src.components.dialog_attendance_results import show_attendance_result
 
 @st.dialog('Voice Attendance')
 
@@ -65,4 +66,4 @@ def voice_attendance_dialog(selected_subject_id):
         st.divider()
 
         df_results, logs = st.session_state.voice_attendance_results
-        show_attendance_result()
+        show_attendance_result(df_results, logs)

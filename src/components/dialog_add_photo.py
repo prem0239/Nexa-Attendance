@@ -12,6 +12,8 @@ def add_photos_dialog():
 
     if 'photo_tab' not in  st.session_state:
         st.session_state.photo_tab = 'camera'
+    if 'photo_widget_gen' not in st.session_state:
+        st.session_state.photo_widget_gen = 0
 
     t1,t2 = st.columns(2)
 
@@ -27,20 +29,22 @@ def add_photos_dialog():
             st.session_state.photo_tab = 'upload'
 
     if st.session_state.photo_tab == 'camera':
-        cam_photo = st.camera_input('Take Snapshot', key='dialog_cam')
+        cam_photo = st.camera_input('Take Snapshot', key=f"dialog_cam_{st.session_state.photo_widget_gen}")
+
 
         if cam_photo:
             st.session_state.attendance_images.append(Image.open(cam_photo))
+            st.session_state.photo_widget_gen += 1
             st.toast('Photo Captured ')
             st.rerun()
 
     if st.session_state.photo_tab == 'upload':
-        uploaded_files = st.file_uploader('Choose image files', type=['jpg', 'png', 'jpeg'], accept_multiple_files=True, key='dialog_upload')
+        uploaded_files = st.file_uploader('Choose image files', type=['jpg', 'png', 'jpeg'], accept_multiple_files=True, key=f"dialog_upload_{st.session_state.photo_widget_gen}")
 
         if uploaded_files:
             for f in uploaded_files:
                 st.session_state.attendance_images.append(Image.open(f))
-
+            st.session_state.photo_widget_gen += 1
             st.toast('Photo Uploaded successfully')
             st.rerun()
 

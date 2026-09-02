@@ -6,7 +6,7 @@ from PIL import Image
 import numpy as np
 from src.database.db import get_all_students, create_student, get_student_subjects, get_student_attendance, unenroll_student_to_subject
 from src.pipelines.face_pipeline import predict_attendance, get_face_embeddings, train_classifier
-#from src.pipelines.voice_pipeline import get_voice_embedding
+from src.pipelines.voice_pipeline import get_voice_embedding
 import time
 from src.components.dialog_enroll import enroll_dialog
 from src.components.subject_card import subject_card
@@ -159,8 +159,8 @@ def student_screen():
                             face_emb = encoding[0].tolist()
 
                             voice_emb = None
-                            #if audio_data:
-                               # voice_emb = get_voice_embedding(audio_data.read())
+                            if audio_data:
+                               voice_emb = get_voice_embedding(audio_data.read())
 
                             response_data = create_student(new_name, face_embedding = face_emb, voice_embedding = voice_emb)
 
