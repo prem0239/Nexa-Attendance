@@ -84,7 +84,7 @@ def get_trained_model():
 
 
 def train_classifier():
-    st.cache_resource.clear()
+    get_trained_model.clear()
     model_data = get_trained_model()
     return bool(model_data)
 
@@ -110,19 +110,14 @@ def predict_attendance(class_image_np):
 
 
     for enc in encoding:
-        if len(all_students)>=2:
-            predicted_id = int(clf.predict([enc])[0])
+        distances = [np.linalg.norm(np.array(student_embedding) - enc) for student_embedding in X]
+        best_idx = int(np.argmin(distances))
+        best_match_score = distances[best_idx]
 
-        else:
-            predicted_id = int(all_students[0])
-
-        student_embedding = X[y.index(predicted_id)]
-
-        best_match_score = np.linalg.norm(student_embedding - enc)
-
-        resemblance_thresold = 0.6
+        resemblance_thresold = 0.55
 
         if best_match_score <= resemblance_thresold:
+            predicted_id = int(y[best_idx])
             detected_student[predicted_id] = True
     
     return detected_student, all_students, len(encoding)

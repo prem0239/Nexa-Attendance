@@ -4,7 +4,7 @@ from src.database.config import supabase
 import time
 from PIL import Image
 
-
+Image.MAX_IMAGE_PIXELS = 300_000_000
 @st.dialog("Capture or upload photos")
 def add_photos_dialog():
 
