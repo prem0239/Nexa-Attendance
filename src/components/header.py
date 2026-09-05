@@ -3,7 +3,7 @@ import streamlit as st
 
 def header_home():
 
-    logo_url = "https://raw.githubusercontent.com/prem0239/delta-demo/refs/heads/main/logo2.png"
+    logo_url = "https://raw.githubusercontent.com/prem0239/Images/refs/heads/main/Header.png"
     
 
     st.markdown(f""" 
@@ -18,7 +18,7 @@ def header_home():
 
 def header_dashboard():
 
-    logo_url = "https://raw.githubusercontent.com/prem0239/delta-demo/refs/heads/main/logo2.png"
+    logo_url = "https://raw.githubusercontent.com/prem0239/Images/refs/heads/main/Header.png"
     
 
     st.markdown(f""" 

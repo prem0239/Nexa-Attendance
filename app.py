@@ -10,7 +10,7 @@ from src.components.dialog_auto_enroll import auto_enroll_dialog
 def main():
     st.set_page_config(
         page_title = 'Nexa Attend - An AI Attendance System',
-        page_icon = 'https://raw.githubusercontent.com/prem0239/delta-demo/refs/heads/main/logo2.png'
+        page_icon = 'https://raw.githubusercontent.com/prem0239/Images/refs/heads/main/icon_.png'
     )
 
     if 'login_type' not in st.session_state:

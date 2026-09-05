@@ -14,14 +14,14 @@ def home_screen():
 
     with col1:
         st.header("I'm Student")
-        st.image("https://raw.githubusercontent.com/prem0239/delta-demo/refs/heads/main/Student_logo.png")
+        st.image("https://raw.githubusercontent.com/prem0239/Images/refs/heads/main/Student_logo.png")
         if st.button('Student Portal',icon=':material/arrow_outward:'):
             st.session_state['login_type'] = 'student'
             st.rerun()
 
     with col2:
         st.header("I'm Teacher")
-        st.image("https://raw.githubusercontent.com/prem0239/delta-demo/refs/heads/main/Teacher_logo.png" )
+        st.image("https://raw.githubusercontent.com/prem0239/Images/refs/heads/main/Teacher_logo.png" )
         if st.button('Teacher Portal', icon=':material/arrow_outward:'):
             st.session_state['login_type'] = 'teacher'
             st.rerun()

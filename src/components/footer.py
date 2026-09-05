@@ -55,7 +55,7 @@ def footer_home():
 
 def footer_dashboard():
 
-    logo_url = "https://raw.githubusercontent.com/prem0239/delta-demo/refs/heads/main/footer_logo.png"
+    logo_url = "https://raw.githubusercontent.com/prem0239/Images/refs/heads/main/Footer_logo_.png"
 
     st.markdown(f"""
     <style>
